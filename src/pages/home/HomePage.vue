@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import HomeHeader from "./home/HomeHeader.vue";
+import AssetViewCard from "./home/AssetViewCard.vue";
+import DailyIncomeCard from "./home/DailyIncomeCard.vue";
+import AssetChangeCard from "./home/AssetChangeCard.vue";
+</script>
+
 <template>
-  <div class="container mx-auto px-4 pt-4 pb-20 md:pb-4 md:pl-24">HomePage</div>
+  <HomeHeader />
+
+  <!-- 主体内容 -->
+  <div class="flex-1 p-4 overflow-y-auto">
+    <h2 class="text-2xl font-bold mb-6">资产总览</h2>
+
+    <!-- 资产概览卡片 -->
+    <AssetViewCard />
+    <DailyIncomeCard />
+    <AssetChangeCard />
+  </div>
 </template>

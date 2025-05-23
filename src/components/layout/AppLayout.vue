@@ -23,9 +23,9 @@ const navItems: NavItem[] = [
 </script>
 
 <template>
-  <div class="flex h-screen">
-    <!-- 左侧导航栏 -->
-    <aside class="hidden md:flex flex-col w-64 h-screen bg-white shadow-lg fixed left-0 top-0">
+  <!-- 左侧导航栏 -->
+  <div class="flex flex-col md:flex-row min-h-screen">
+    <aside class="hidden md:flex flex-col w-64 bg-white shadow-lg">
       <div class="p-4 border-b border-slate-200">
         <h1 class="text-2xl font-bold text-blue-600">HEXA ALLOY</h1>
         <p class="text-sm text-slate-500">专业金融管理平台</p>
@@ -63,31 +63,33 @@ const navItems: NavItem[] = [
     </aside>
 
     <!-- 内容区域 -->
-    <RouterView />
-
-    <!-- 底部导航栏 -->
-    <nav class="bg-white shadow-lg flex flex-row md:hidden fixed bottom-0 left-0 right-0 h-16 z-10">
-      <router-link
-        v-for="item in navItems"
-        :key="item.id"
-        :to="item.id"
-        @click="activeTab = item.id"
-        class="flex items-center justify-center flex-1 flex-col py-2 transition-all duration-300 ease-in-out"
-        :class="activeTab === item.id ? 'text-blue-600' : 'text-gray-500 hover:text-blue-400'"
-      >
-        <div
-          class="transition-transform duration-300 ease-in-out"
-          :class="activeTab === item.id ? 'scale-110' : 'scale-100'"
-        >
-          <component :is="item.icon" class="w-6 h-6" />
-        </div>
-        <span
-          class="mt-1 text-xs font-medium transition-all duration-300 ease-in-out"
-          :class="activeTab === item.id ? 'opacity-100' : 'opacity-70'"
-        >
-          {{ item.label }}
-        </span>
-      </router-link>
-    </nav>
+    <main class="flex-1 flex flex-col">
+      <RouterView />
+    </main>
   </div>
+
+  <!-- 底部导航栏 -->
+  <nav class="bg-white shadow-lg flex flex-row md:hidden fixed bottom-0 left-0 right-0 h-16 z-10">
+    <router-link
+      v-for="item in navItems"
+      :key="item.id"
+      :to="item.id"
+      @click="activeTab = item.id"
+      class="flex items-center justify-center flex-1 flex-col py-2 transition-all duration-300 ease-in-out"
+      :class="activeTab === item.id ? 'text-blue-600' : 'text-gray-500 hover:text-blue-400'"
+    >
+      <div
+        class="transition-transform duration-300 ease-in-out"
+        :class="activeTab === item.id ? 'scale-110' : 'scale-100'"
+      >
+        <component :is="item.icon" class="w-6 h-6" />
+      </div>
+      <span
+        class="mt-1 text-xs font-medium transition-all duration-300 ease-in-out"
+        :class="activeTab === item.id ? 'opacity-100' : 'opacity-70'"
+      >
+        {{ item.label }}
+      </span>
+    </router-link>
+  </nav>
 </template>

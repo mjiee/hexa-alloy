@@ -1,6 +1,15 @@
 import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router";
 import { AppLayout } from "@/components";
-import { HomePage, MarketPage, MessageListPage, ProfilePage } from "@/pages";
+import {
+  HomePage,
+  MarketPage,
+  MessageListPage,
+  MessageDetailPage,
+  ProfilePage,
+  AssetsPage,
+  TransactionsPage,
+  StockPage,
+} from "@/pages";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -8,8 +17,12 @@ const routes: RouteRecordRaw[] = [
     component: AppLayout,
     children: [
       { path: "", component: HomePage },
+      { path: "assets", component: AssetsPage },
+      { path: "transactions", component: TransactionsPage },
       { path: "market", component: MarketPage },
+      { path: "stock", component: StockPage },
       { path: "message", component: MessageListPage },
+      { path: "message/detail", component: MessageDetailPage },
       { path: "profile", component: ProfilePage },
     ],
   },

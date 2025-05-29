@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import type { Component } from "vue";
-import ChartCandleIcon from "@/assets/icons/chart-candle.svg?component";
-import HomeIcon from "@/assets/icons/home.svg?component";
-import MessageIcon from "@/assets/icons/message.svg?component";
-import UserIcon from "@/assets/icons/user.svg?component";
+import { IconChartCandle, IconHome, IconMessage, IconUser } from "@tabler/icons-vue";
 
 interface NavItem {
   id: string;
@@ -15,10 +12,10 @@ interface NavItem {
 const activeTab = ref<string>("/");
 
 const navItems: NavItem[] = [
-  { id: "/", label: "首页", icon: HomeIcon },
-  { id: "/market", label: "市场", icon: ChartCandleIcon },
-  { id: "/message", label: "消息", icon: MessageIcon },
-  { id: "/profile", label: "我的", icon: UserIcon },
+  { id: "/", label: "首页", icon: IconHome },
+  { id: "/market", label: "市场", icon: IconChartCandle },
+  { id: "/message", label: "消息", icon: IconMessage },
+  { id: "/profile", label: "我的", icon: IconUser },
 ];
 </script>
 

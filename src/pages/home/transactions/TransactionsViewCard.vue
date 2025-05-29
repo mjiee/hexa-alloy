@@ -15,31 +15,24 @@ use([CanvasRenderer, LineChart, TooltipComponent, LegendComponent, GridComponent
 
 const option = ref<ECOption>({
   tooltip: { trigger: "axis" },
-  legend: { data: ["总资产", "净资产", "负债"] },
-  xAxis: { type: "category", boundaryGap: false, data: ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05"] },
-  yAxis: { type: "value" },
+  legend: { data: ["收入", "支出"] },
+  xAxis: { type: "category", boundaryGap: false, data: ["1月", "2月", "3月", "4月", "5月"] },
+  yAxis: { type: "value", show: false },
   grid: { containLabel: false },
   series: [
     {
-      name: "总资产",
+      name: "收入",
       type: "line",
       stack: "Total",
       smooth: true,
       data: [120, 132, 101, 134, 90],
     },
     {
-      name: "净资产",
+      name: "支出",
       type: "line",
       stack: "Total",
       smooth: true,
       data: [220, 182, 191, 234, 290],
-    },
-    {
-      name: "负债",
-      type: "line",
-      stack: "Total",
-      smooth: true,
-      data: [150, 232, 201, 154, 190],
     },
   ],
 });
@@ -48,11 +41,15 @@ const option = ref<ECOption>({
 <template>
   <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
     <div class="flex justify-between items-center mb-4">
-      <h3 class="font-medium">资产变化趋势</h3>
-      <button class="text-blue-600 text-sm hover:underline">查看全部</button>
+      <h2 class="text-lg font-semibold">收支趋势</h2>
+      <div class="flex space-x-2">
+        <button class="px-3 py-1 text-sm rounded-full bg-primary text-white">全部</button>
+        <button class="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">收入</button>
+        <button class="px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">支出</button>
+      </div>
     </div>
-    <div class="h-[300px]">
-      <v-chart class="w-full h-full" :option="option" autoresize />
+    <div class="h-[200px]">
+      <VChart class="w-full h-full" :option="option" autoresize />
     </div>
   </div>
 </template>

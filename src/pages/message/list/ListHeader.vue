@@ -24,10 +24,7 @@ import { IconMenu2, IconSearch, IconChecks } from "@tabler/icons-vue";
     <div class="px-4 lg:px-6 pb-2 flex space-x-1 overflow-x-auto scrollbar-hide">
       <button class="px-4 py-2 text-sm font-medium text-primary border-b-2 border-primary">全部消息</button>
       <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-primary">互动通知</button>
-      <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-primary relative">
-        市场提醒
-        <span class="absolute -top-1 -right-1 h-2 w-2 bg-red-500 rounded-full badge-pulse"></span>
-      </button>
+      <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-primary relative">市场提醒</button>
       <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-primary">资产变动</button>
       <button class="px-4 py-2 text-sm font-medium text-neutral-600 hover:text-primary">系统通知</button>
     </div>

@@ -86,7 +86,7 @@ const option = ref<ECOption>({
 </script>
 
 <template>
-  <div class="bg-white rounded-xl shadow-sm p-6 mb-6 h-[400px]">
+  <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
     <div class="flex justify-between items-center mb-4">
       <h3 class="font-medium">近期收益</h3>
       <router-link to="/transactions">
@@ -94,6 +94,8 @@ const option = ref<ECOption>({
       </router-link>
     </div>
 
-    <VChart class="w-full h-full" :option="option" autoresize />
+    <div class="h-[400px]">
+      <VChart class="w-full h-full" :option="option" autoresize />
+    </div>
   </div>
 </template>

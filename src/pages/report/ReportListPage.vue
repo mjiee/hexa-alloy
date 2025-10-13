@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { MainLayout, Pagination } from "@/components";
 import { getReportWinRate, queryReports, QueryReportsRequest, ReportDetail, ReportWinRate } from "@/services/reportApi";
 import { defaultPage } from "@/utils/constants";
@@ -40,7 +40,12 @@ const handlePageChange = (page: number) => {
 };
 
 onMounted(() => {
+  document.body.dataset.disableSwipeBack = "true";
   fetchReports();
+});
+
+onUnmounted(() => {
+  delete document.body.dataset.disableSwipeBack;
 });
 </script>
 

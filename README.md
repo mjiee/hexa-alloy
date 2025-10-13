@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/mjiee/hexa-alloy"><img width="200" src="https://github.com/mjiee/hexa-alloy/blob/master/src-tauri/icons/icon.png" alt="hexa alloy logo"></a></p>
+<!-- <p align="center"><a href="https://github.com/mjiee/hexa-alloy"><img width="200" src="https://github.com/mjiee/hexa-alloy/blob/master/src-tauri/icons/icon.png" alt="hexa alloy logo"></a></p> -->
 
 <h1 align="center">Hexa Alloy</h1>
 

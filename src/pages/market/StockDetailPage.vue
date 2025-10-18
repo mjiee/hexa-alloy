@@ -4,6 +4,7 @@ import { useRoute } from "vue-router";
 import { MainLayout, StockHeader } from "@/components";
 import { getStock, StockDetail } from "@/services/stockApi";
 import DetailCard from "./detail/DetailCard.vue";
+import DataCard from "./detail/DataCard.vue";
 
 const route = useRoute();
 const stock = ref<StockDetail>();
@@ -35,6 +36,7 @@ onMounted(() => {
 
       <template v-if="stock">
         <DetailCard :stock="stock" />
+        <DataCard :ticker="stock.ticker" />
       </template>
     </div>
   </MainLayout>
